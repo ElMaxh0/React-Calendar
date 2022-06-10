@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SelectedDayProvider from './hooks/SelectedDay';
+import SelectedMouthProvider from './hooks/SelectedMouth';
+import CompromissosProvider from './hooks/Compromissos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <SelectedDayProvider>
+      <SelectedMouthProvider>
+        <CompromissosProvider>
+          <App />
+        </CompromissosProvider>
+      </SelectedMouthProvider>
+    </SelectedDayProvider>
   </React.StrictMode>
 );
 
